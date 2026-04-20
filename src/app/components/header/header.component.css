@@ -1,0 +1,84 @@
+.header {
+  background: linear-gradient(135deg, #0033A0 0%, #002080 100%);
+  color: white;
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  height: 45px;
+  width: auto;
+  border-radius: 4px;
+}
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  display: block;
+}
+.brand-sub {
+  font-size: 0.7rem;
+  color: #00AEEF;
+  display: block;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.nav a:hover, .nav a.active {
+  background: rgba(0,174,239,0.25);
+  color: white;
+}
+.btn-registro {
+  background: #00AEEF !important;
+  color: white !important;
+  font-weight: 600;
+}
+.btn-registro:hover {
+  background: #0090c8 !important;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px; left: 0; right: 0;
+    background: #0033A0;
+    flex-direction: column;
+    padding: 16px;
+  }
+  .nav.nav-open { display: flex; }
+  .nav a { width: 100%; text-align: center; }
+}

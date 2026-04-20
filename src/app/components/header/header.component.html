@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="header-container">
+
+    <!-- Logo + Nombre -->
+    <div class="brand">
+      <img src="assets/logo.png" alt="Logo UCM" class="logo"
+           onerror="this.style.display='none'">
+      <div class="brand-text">
+        <span class="brand-name">TutorIA UCM</span>
+        <span class="brand-sub">Plataforma de Tutorías Estudiantiles</span>
+      </div>
+    </div>
+
+    <!-- Navegación Desktop -->
+    <nav class="nav" [class.nav-open]="menuAbierto">
+      <a routerLink="/"        routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact:true}">🏠 Inicio</a>
+      <a routerLink="/tutores" routerLinkActive="active">👥 Tutores</a>
+      <a routerLink="/login"   routerLinkActive="active">🔐 Login</a>
+      <a routerLink="/registro" class="btn-registro">✏️ Registro</a>
+    </nav>
+
+    <!-- Botón hamburguesa (móvil) -->
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+  </div>
+</header>

@@ -1,0 +1,31 @@
+<!-- Botón flotante -->
+<div class="chatbot-fab" (click)="toggleChatbot()">
+  {{ abierto ? '✕' : '🤖' }}
+</div>
+
+<!-- Ventana del chat -->
+<div class="chatbot-window" *ngIf="abierto">
+  <div class="chat-header">
+    <span>🤖 Asistente TutorIA UCM</span>
+    <button (click)="toggleChatbot()">✕</button>
+  </div>
+
+  <div class="chat-messages">
+    <div
+      *ngFor="let msg of mensajes"
+      [class]="msg.esBot ? 'msg bot' : 'msg user'">
+      {{ msg.texto }}
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input
+      [(ngModel)]="input"
+      (keyup.enter)="enviar()"
+      placeholder="Escribe tu pregunta..."
+      class="chat-field">
+    <button (click)="enviar()" class="chat-send">➤</button>
+  </div>
+
+  <p class="chat-hint">💡 Prueba: "tutor", "precio", "reserva", "cálculo"</p>
+</div>

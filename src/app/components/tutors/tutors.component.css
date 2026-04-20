@@ -1,0 +1,75 @@
+.tutors-page { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.page-header { text-align: center; margin-bottom: 32px; }
+.page-header h1 { font-size: 2rem; color: #0033A0; }
+.page-header p { color: #666; }
+.filtros-container {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  background: white; padding: 20px; border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 24px;
+}
+.filtro-input, .filtro-select {
+  padding: 10px 14px; border: 2px solid #e0e0e0;
+  border-radius: 8px; font-size: 0.9rem;
+  flex: 1; min-width: 180px;
+  transition: border-color 0.2s;
+}
+.filtro-input:focus, .filtro-select:focus {
+  outline: none; border-color: #00AEEF;
+}
+.btn-limpiar {
+  padding: 10px 20px; background: #f0f0f0;
+  border: none; border-radius: 8px;
+  cursor: pointer; font-weight: 600; color: #555;
+  transition: background 0.2s;
+}
+.btn-limpiar:hover { background: #e0e0e0; }
+.resultado-count { color: #555; margin-bottom: 20px; }
+.tutors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+.tutor-card {
+  background: white; border-radius: 16px;
+  padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-top: 4px solid #0033A0;
+}
+.tutor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,51,160,0.15);
+}
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.tutor-foto { font-size: 3rem; }
+.badge-disponible {
+  font-size: 0.75rem; padding: 4px 10px;
+  background: #e6f9e6; color: #2e7d32;
+  border-radius: 20px; font-weight: 600;
+}
+.no-disponible { background: #fde8e8 !important; color: #c62828 !important; }
+.tutor-nombre { font-size: 1.1rem; font-weight: 700; color: #0033A0; margin: 0 0 4px; }
+.tutor-carrera { font-size: 0.85rem; color: #666; margin-bottom: 8px; }
+.tutor-valoracion { color: #f59e0b; font-size: 0.85rem; margin-bottom: 12px; }
+.tutor-materias { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.materia-tag {
+  background: #e8f0ff; color: #0033A0;
+  font-size: 0.75rem; padding: 3px 10px;
+  border-radius: 20px; font-weight: 500;
+}
+.tutor-precio { font-weight: 700; color: #333; margin-bottom: 16px; font-size: 0.95rem; }
+.btn-ver-perfil {
+  display: block; text-align: center;
+  background: #0033A0; color: white;
+  padding: 10px; border-radius: 8px;
+  text-decoration: none; font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-ver-perfil:hover { background: #00AEEF; }
+.sin-resultados { text-align: center; padding: 60px; color: #666; }
+.sin-resultados span { font-size: 3rem; display: block; margin-bottom: 12px; }
+.btn-primary {
+  background: #0033A0; color: white;
+  border: none; padding: 12px 24px;
+  border-radius: 8px; cursor: pointer;
+  font-weight: 600; margin-top: 16px;
+}

@@ -1,0 +1,47 @@
+.profile-page { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+.btn-back {
+  display: inline-block; color: #0033A0;
+  text-decoration: none; font-weight: 600;
+  margin-bottom: 20px; font-size: 0.95rem;
+}
+.btn-back:hover { text-decoration: underline; }
+.profile-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.1); }
+.profile-top {
+  background: linear-gradient(135deg, #0033A0, #00AEEF);
+  color: white; padding: 40px; display: flex; gap: 30px; align-items: center;
+  flex-wrap: wrap;
+}
+.profile-foto { font-size: 5rem; }
+.profile-info h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.carrera, .valoracion, .precio { margin: 6px 0; opacity: 0.9; font-size: 1rem; }
+.badge-ok, .badge-no {
+  display: inline-block; margin-top: 10px;
+  padding: 6px 16px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;
+}
+.badge-ok { background: #e6f9e6; color: #2e7d32; }
+.badge-no { background: #fde8e8; color: #c62828; }
+.profile-body { padding: 32px; }
+.profile-body h3 { color: #0033A0; font-size: 1.1rem; margin: 24px 0 12px; }
+.descripcion { color: #555; line-height: 1.7; }
+.materias-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.materia-tag {
+  background: #e8f0ff; color: #0033A0;
+  padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;
+}
+.reserva-section { border-top: 1px solid #eee; margin-top: 24px; padding-top: 24px; }
+.info-reserva { color: #666; font-size: 0.9rem; margin-bottom: 16px; }
+.btn-reservar {
+  background: #0033A0; color: white;
+  border: none; padding: 14px 32px; border-radius: 10px;
+  font-size: 1rem; font-weight: 700; cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-reservar:hover:not(:disabled) { background: #00AEEF; }
+.btn-reservar:disabled { background: #ccc; cursor: not-allowed; }
+.exito-msg {
+  margin-top: 16px; padding: 14px 20px;
+  background: #e6f9e6; border-left: 4px solid #2e7d32;
+  border-radius: 8px; color: #2e7d32;
+}
+.no-encontrado { text-align: center; padding: 80px 20px; color: #666; }
+.no-encontrado span { font-size: 4rem; display: block; margin-bottom: 16px; }

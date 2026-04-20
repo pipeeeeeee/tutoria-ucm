@@ -1,0 +1,44 @@
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Bienvenido a <span class="highlight">TutorIA UCM</span></h1>
+    <p class="hero-sub">
+      Conectamos estudiantes UCM que quieren aprender con quienes saben enseñar.
+      ¡Encuentra tu tutor ideal o conviértete en uno!
+    </p>
+    <div class="hero-buttons">
+      <a routerLink="/tutores" class="btn-primary">🔍 Buscar Tutor</a>
+      <a routerLink="/registro" class="btn-secondary">✏️ Ser Tutor</a>
+    </div>
+  </div>
+  <div class="hero-illustration">🎓</div>
+</section>
+
+<!-- ESTADÍSTICAS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat-card" *ngFor="let s of stats">
+      <span class="stat-num">{{ s.numero }}</span>
+      <span class="stat-label">{{ s.label }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="beneficios">
+  <h2>¿Por qué usar TutorIA UCM?</h2>
+  <div class="beneficios-grid">
+    <div class="beneficio-card" *ngFor="let b of beneficios">
+      <span class="beneficio-icono">{{ b.icono }}</span>
+      <h3>{{ b.titulo }}</h3>
+      <p>{{ b.desc }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta">
+  <h2>¿Listo para comenzar?</h2>
+  <p>Regístrate gratis y accede a toda la plataforma</p>
+  <a routerLink="/registro" class="btn-primary">Registrarme Ahora →</a>
+</section>

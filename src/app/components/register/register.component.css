@@ -1,0 +1,61 @@
+/* Reutiliza estilos de login + extras */
+.auth-page {
+  min-height: 80vh; display: flex;
+  align-items: center; justify-content: center;
+  padding: 40px 20px; background: #f5f7fa;
+}
+.auth-card {
+  background: white; border-radius: 16px;
+  width: 100%; max-width: 420px;
+  box-shadow: 0 8px 32px rgba(0,51,160,0.12);
+  overflow: hidden;
+}
+.wide { max-width: 620px; }
+.auth-header {
+  background: linear-gradient(135deg, #0033A0, #00AEEF);
+  color: white; text-align: center; padding: 32px;
+}
+.auth-icon { font-size: 2.5rem; display: block; margin-bottom: 8px; }
+.auth-header h2 { font-size: 1.5rem; }
+.auth-header p { opacity: 0.85; }
+.auth-body { padding: 32px; }
+.rol-selector { display: flex; gap: 12px; margin-bottom: 24px; }
+.rol-selector button {
+  flex: 1; padding: 12px; border: 2px solid #e0e0e0;
+  border-radius: 8px; background: white; cursor: pointer;
+  font-weight: 600; color: #555; transition: all 0.2s;
+}
+.rol-selector button.active {
+  border-color: #0033A0; background: #e8f0ff; color: #0033A0;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-weight: 600; color: #333; margin-bottom: 6px; font-size: 0.9rem; }
+.form-input {
+  width: 100%; padding: 11px 14px;
+  border: 2px solid #e0e0e0; border-radius: 8px;
+  font-size: 0.95rem; box-sizing: border-box;
+}
+.form-input:focus { outline: none; border-color: #00AEEF; }
+small { color: #888; font-size: 0.78rem; }
+.error-msg { background: #fde8e8; color: #c62828; padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; }
+.btn-auth {
+  display: block; width: 100%; padding: 14px;
+  background: #0033A0; color: white;
+  border: none; border-radius: 8px; text-align: center;
+  font-size: 1rem; font-weight: 700; cursor: pointer;
+  text-decoration: none; transition: background 0.2s;
+}
+.btn-auth:hover { background: #00AEEF; }
+.auth-link { text-align: center; margin-top: 16px; font-size: 0.9rem; }
+.auth-link a { color: #0033A0; font-weight: 600; }
+.exito-card {
+  background: white; border-radius: 16px; padding: 48px;
+  text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  max-width: 400px;
+}
+.exito-card span { font-size: 4rem; display: block; margin-bottom: 16px; }
+.exito-card h2 { color: #0033A0; margin-bottom: 12px; }
+.exito-card p { color: #555; margin-bottom: 8px; }
+.exito-card .btn-auth { margin-top: 20px; }
+@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }

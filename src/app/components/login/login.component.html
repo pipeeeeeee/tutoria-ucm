@@ -1,0 +1,35 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-header">
+      <span class="auth-icon">🔐</span>
+      <h2>Iniciar Sesión</h2>
+      <p>Accede a tu cuenta TutorIA UCM</p>
+    </div>
+
+    <div class="auth-body">
+      <div class="form-group">
+        <label>📧 Correo UCM</label>
+        <input type="email" [(ngModel)]="email"
+               placeholder="usuario@ucm.cl" class="form-input">
+      </div>
+
+      <div class="form-group">
+        <label>🔒 Contraseña</label>
+        <input type="password" [(ngModel)]="password"
+               placeholder="••••••••" class="form-input">
+      </div>
+
+      <div class="error-msg" *ngIf="error">{{ error }}</div>
+
+      <button (click)="login()" [disabled]="cargando" class="btn-auth">
+        {{ cargando ? '⏳ Verificando...' : '→ Ingresar' }}
+      </button>
+
+      <p class="hint">💡 Prueba con: demo@ucm.cl / 12345</p>
+
+      <p class="auth-link">
+        ¿No tienes cuenta? <a routerLink="/registro">Regístrate aquí</a>
+      </p>
+    </div>
+  </div>
+</div>

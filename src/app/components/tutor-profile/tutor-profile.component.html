@@ -1,0 +1,53 @@
+<div class="profile-page" *ngIf="tutor; else noEncontrado">
+  <a routerLink="/tutores" class="btn-back">← Volver a Tutores</a>
+
+  <div class="profile-card">
+    <div class="profile-top">
+      <span class="profile-foto">{{ tutor.foto }}</span>
+      <div class="profile-info">
+        <h1>{{ tutor.nombre }}</h1>
+        <p class="carrera">📚 {{ tutor.carrera }}</p>
+        <p class="valoracion">⭐ {{ tutor.valoracion }}/5 — Muy valorado</p>
+        <p class="precio">💵 ${{ tutor.precio | number }} CLP/hora</p>
+        <span [class]="tutor.disponible ? 'badge-ok' : 'badge-no'">
+          {{ tutor.disponible ? '✅ Disponible' : '⛔ No disponible' }}
+        </span>
+      </div>
+    </div>
+
+    <div class="profile-body">
+      <h3>📝 Sobre el tutor</h3>
+      <p class="descripcion">{{ tutor.descripcion }}</p>
+
+      <h3>📖 Materias que imparte</h3>
+      <div class="materias-list">
+        <span class="materia-tag" *ngFor="let m of tutor.materias">{{ m }}</span>
+      </div>
+
+      <div class="reserva-section">
+        <h3>📅 Reservar Tutoría</h3>
+        <p class="info-reserva">
+          Al hacer clic en reservar, se simulará el envío de una solicitud al tutor.
+        </p>
+        <button
+          (click)="simularReserva()"
+          [disabled]="!tutor.disponible"
+          class="btn-reservar">
+          {{ tutor.disponible ? '📩 Enviar Solicitud de Reserva' : '⛔ No disponible actualmente' }}
+        </button>
+        <div class="exito-msg" *ngIf="reservaEnviada">
+          ✅ ¡Solicitud enviada con éxito! El tutor <strong>{{ tutor.nombre }}</strong>
+          te contactará pronto.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noEncontrado>
+  <div class="no-encontrado">
+    <span>🔍</span>
+    <h2>Tutor no encontrado</h2>
+    <a routerLink="/tutores" class="btn-back">← Volver</a>
+  </div>
+</ng-template>

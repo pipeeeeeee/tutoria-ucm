@@ -1,0 +1,63 @@
+<div class="tutors-page">
+  <div class="page-header">
+    <h1>👥 Tutores Disponibles</h1>
+    <p>Encuentra el tutor perfecto para tu materia</p>
+  </div>
+
+  <!-- FILTROS -->
+  <div class="filtros-container">
+    <input
+      type="text"
+      [(ngModel)]="filtroBusqueda"
+      (input)="filtrar()"
+      placeholder="🔍 Buscar por nombre..."
+      class="filtro-input">
+
+    <select [(ngModel)]="filtroCarrera" (change)="filtrar()" class="filtro-select">
+      <option value="">📚 Todas las carreras</option>
+      <option *ngFor="let c of carreras" [value]="c">{{ c }}</option>
+    </select>
+
+    <select [(ngModel)]="filtroMateria" (change)="filtrar()" class="filtro-select">
+      <option value="">📖 Todas las materias</option>
+      <option *ngFor="let m of materias" [value]="m">{{ m }}</option>
+    </select>
+
+    <button (click)="limpiarFiltros()" class="btn-limpiar">✖ Limpiar</button>
+  </div>
+
+  <!-- RESULTADO -->
+  <p class="resultado-count">
+    Mostrando <strong>{{ tutoresFiltrados.length }}</strong> tutor(es)
+  </p>
+
+  <!-- GRID DE TARJETAS -->
+  <div class="tutors-grid" *ngIf="tutoresFiltrados.length > 0; else sinResultados">
+    <div class="tutor-card" *ngFor="let tutor of tutoresFiltrados">
+      <div class="card-header">
+        <span class="tutor-foto">{{ tutor.foto }}</span>
+        <span class="badge-disponible" [class.no-disponible]="!tutor.disponible">
+          {{ tutor.disponible ? '✅ Disponible' : '⛔ No disponible' }}
+        </span>
+      </div>
+      <h3 class="tutor-nombre">{{ tutor.nombre }}</h3>
+      <p class="tutor-carrera">{{ tutor.carrera }}</p>
+      <div class="tutor-valoracion">
+        {{ estrellas(tutor.valoracion) }} {{ tutor.valoracion }}/5
+      </div>
+      <div class="tutor-materias">
+        <span class="materia-tag" *ngFor="let m of tutor.materias">{{ m }}</span>
+      </div>
+      <div class="tutor-precio">💵 ${{ tutor.precio | number }} / hora</div>
+      <a [routerLink]="['/tutor', tutor.id]" class="btn-ver-perfil">Ver Perfil →</a>
+    </div>
+  </div>
+
+  <ng-template #sinResultados>
+    <div class="sin-resultados">
+      <span>😕</span>
+      <p>No se encontraron tutores con esos filtros.</p>
+      <button (click)="limpiarFiltros()" class="btn-primary">Ver todos</button>
+    </div>
+  </ng-template>
+</div>

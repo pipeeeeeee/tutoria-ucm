@@ -1,0 +1,75 @@
+<div class="auth-page">
+  <div class="auth-card wide" *ngIf="!registrado; else exito">
+    <div class="auth-header">
+      <span class="auth-icon">✏️</span>
+      <h2>Crear Cuenta</h2>
+      <p>Únete a TutorIA UCM</p>
+    </div>
+
+    <div class="auth-body">
+      <!-- ROL -->
+      <div class="rol-selector">
+        <button (click)="form.rol='estudiante'"
+                [class.active]="form.rol==='estudiante'">👨‍🎓 Soy Estudiante</button>
+        <button (click)="form.rol='tutor'"
+                [class.active]="form.rol==='tutor'">👨‍🏫 Soy Tutor</button>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre Completo *</label>
+          <input type="text" [(ngModel)]="form.nombre" placeholder="Juan Pérez" class="form-input">
+        </div>
+        <div class="form-group">
+          <label>RUT *</label>
+          <input type="text" [(ngModel)]="form.rut" placeholder="12.345.678-9" class="form-input">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Correo UCM *</label>
+        <input type="email" [(ngModel)]="form.email" placeholder="usuario@ucm.cl" class="form-input">
+      </div>
+
+      <div class="form-group">
+        <label>Carrera *</label>
+        <select [(ngModel)]="form.carrera" class="form-input">
+          <option value="">Selecciona tu carrera</option>
+          <option *ngFor="let c of carreras" [value]="c">{{ c }}</option>
+        </select>
+      </div>
+
+      <div class="form-group" *ngIf="form.rol === 'tutor'">
+        <label>Materias que impartes</label>
+        <input type="text" [(ngModel)]="form.materias"
+               placeholder="Ej: Cálculo, Programación, Física"
+               class="form-input">
+        <small>Separa las materias con comas</small>
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña *</label>
+        <input type="password" [(ngModel)]="form.password" placeholder="••••••••" class="form-input">
+      </div>
+
+      <div class="error-msg" *ngIf="error">{{ error }}</div>
+
+      <button (click)="registrar()" class="btn-auth">✅ Crear Cuenta</button>
+
+      <p class="auth-link">
+        ¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Mensaje de éxito -->
+  <ng-template #exito>
+    <div class="exito-card">
+      <span>🎉</span>
+      <h2>¡Registro exitoso!</h2>
+      <p>Bienvenido/a a TutorIA UCM, <strong>{{ form.nombre }}</strong>.</p>
+      <p>Tu rol: <strong>{{ form.rol }}</strong></p>
+      <a routerLink="/login" class="btn-auth">→ Ir al Login</a>
+    </div>
+  </ng-template>
+</div>
